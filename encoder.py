@@ -4,7 +4,11 @@
 def encode(password):
     encoded_password = ""
     for digit in password:
-        encoded_password += str(int(digit) + 3)
+        new_digit = int(digit) + 3
+        # If the new digit is 10 or greater, subtract 10 from the new digit
+        if new_digit >= 10:
+            new_digit -= 10
+        encoded_password += str(new_digit)
     return encoded_password
 
 # Prints menu
