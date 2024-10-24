@@ -39,6 +39,21 @@ def main():
         elif user_choice == "3":
             program_continue = False
 
+#Decode Function by partner - Bryan Gomez
+def decode(string):
+    #The decode function works by creating an empty list and interating through the digits of the string that's entered.
+    decoded_string = []
+    for x in range(0, len(string)):
+        current_num = int(string[x])
+        #In this simple encryption program we simply return the value of the number
+        if current_num >= 3:
+            new_num = str(current_num - 3)
+        elif current_num <= 2:
+            new_num = str(current_num + 7)
+        #After the function processes each number in the string it appends all of the components to the empty list created earlier.
+        decoded_string.append(new_num)
+    #All portions of the list are concatenated into one string.
+    return ''.join(decoded_string)
 
 if __name__ == '__main__':
     main()
